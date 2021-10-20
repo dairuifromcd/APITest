@@ -1,0 +1,50 @@
+{
+  "definitions": {
+    "Band": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "recordLabel": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "recordLabel"
+      ],
+      "additionalProperties": false
+    },
+    "Festival": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "bands": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Band"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "bands"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "type": "array",
+  "additionalProperties": false,
+  "items": {
+    "$ref": "#/definitions/Festival"
+  }
+}
